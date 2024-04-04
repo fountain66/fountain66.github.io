@@ -1,27 +1,30 @@
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Privacy Policy</title>  
-    <style>  
-        body {  
-            font-family: Arial, sans-serif;  
-            margin: 20px;  
-        }  
-    </style>  
-</head>  
-<body>  
-  
-<h1>Privacy Policy</h1>  
-  
-<div id="markdown-content"></div>  
-  
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>  
-<script>  
-    // Markdown文本  
-    var markdownText = `  
-  # Privacy Policy
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #markdown-content {
+            width: 80%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="markdown-content">
+        <p>Loading Privacy Policy ...</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+    <script>
+        // 从URL加载Markdown文本并显示
+        const markdownContent = document.getElementById('markdown-content');
+        const markdownText = `
+# Privacy Policy
 
 This application respects and protects the personal privacy rights of all users of the service. In order to provide you with more accurate and personalized services, this application will use and disclose your personal information in accordance with the provisions of this privacy policy. But this application will be highly diligent. This information is treated with caution. Except as otherwise provided in this privacy policy, the application will not disclose or provide such information to third parties without your prior consent. The application will update this privacy policy from time to times. By agreeing to the use of this app service agreement, you agree that you have consented to the entire content of this privacy policy. This privacy policy is an integral part of the use of this application service agreement.
 
@@ -104,17 +107,10 @@ e) 如您是适格的知识产权投诉人并已提起投诉，应被投诉人�
 
 f) 在本应用平台上创建的某一交易中，如交易任何一方履行或部分履行了交易义务并提出信息披露请求的，本应用有权决定向该用户提供其交易对方的联络方式等必要信息，以促成交易的完成或纠纷的解决。
 
-g) 其它本应用根据法律.法规或者网站政策认为合适的披露。 
-    `;  
-  
-    // 使用marked.js将Markdown文本转换为HTML  
-    var htmlContent = marked(markdownText);  
-  
-    // 将转换后的HTML内容插入到页面中  
-    document.getElementById('markdown-content').innerHTML = htmlContent;  
-</script>  
-  
-</body>  
+g) 其它本应用根据法律.法规或者网站政策认为合适的披露。
+`;
+        const md = window.markdownit();
+        markdownContent.innerHTML = md.render(markdownText);
+    </script>
+</body>
 </html>
-
-
