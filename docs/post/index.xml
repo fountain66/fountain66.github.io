@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on Welcome</title>
+        <link>https://fountain66.github.io/post/</link>
+        <description>Recent content in Posts on Welcome</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Fountain</copyright>
+        <lastBuildDate>Fri, 24 May 2024 09:32:50 +0800</lastBuildDate><atom:link href="https://fountain66.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>PolStudio</title>
+        <link>https://fountain66.github.io/p/polstudio/</link>
+        <pubDate>Fri, 24 May 2024 09:32:50 +0800</pubDate>
+        
+        <guid>https://fountain66.github.io/p/polstudio/</guid>
+        <description>&lt;img src="https://fountain66.github.io/pst.jpg" alt="Featured image of post PolStudio" /&gt;&lt;h3 id=&#34;polstudio-overview&#34;&gt;PolStudio Overview
+&lt;/h3&gt;&lt;p&gt;PolStudio is an efficient and convenient SQL/Scripts management tool that focuses on helping developers easily save, query, and execute SQL statements or script statements.&lt;/p&gt;
+&lt;h3 id=&#34;key-features&#34;&gt;Key Features
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Statement Saving and Management&lt;/strong&gt;: Allows users to save commonly used SQL statements or script statements for easy access and modification at any time. With classification and tagging features, users can organize and manage their code libraries effortlessly.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Metadata support&lt;/strong&gt;: allows you to add Markdown, Html, comments, and other information to statements.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Quick Query and Execution&lt;/strong&gt;: Equipped with a high-performance query engine, PolStudio can quickly execute SQL queries and display results. It also supports multiple database connections, enabling users to seamlessly switch between different database environments.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Result Processing and Export&lt;/strong&gt;: After executing a query, PolStudio provides intuitive result displays and supports further processing of query results through PowerShell or Python scripts. Users can customize scripts for data cleaning, analysis, or visualization, and export results in various formats such as CSV and Excel.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Security and Permission Management&lt;/strong&gt;: Emphasizes data security and provides strict permission management mechanisms. Different access permissions can be set for different users or user groups to ensure that sensitive data is not illegally accessed.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Integration and Extensibility&lt;/strong&gt;: Supports integration with various mainstream development environments and tools, such as Visual Studio Code and Jupyter Notebook. It also provides rich extension interfaces, allowing users to customize functions according to their needs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;applicable-scenarios&#34;&gt;Applicable Scenarios
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Database Administrators: Easily manage databases and execute complex SQL queries and scripts.&lt;/li&gt;
+&lt;li&gt;Data Analysts: Quickly query and analyze data, process data through PowerShell or Python scripts.&lt;/li&gt;
+&lt;li&gt;Software Developers: Save and execute SQL statements during the development process to ensure the correctness of database operations.&lt;/li&gt;
+&lt;li&gt;Normal User: If you don&amp;rsquo;t know how to write scripts, you can find verified scripts here or scripts shared by other users to run them directly to implement the corresponding functionality&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;download--install&#34;&gt;Download &amp;amp; Install
+&lt;/h3&gt;&lt;script type=&#34;module&#34; src=&#34;https://get.microsoft.com/badge/ms-store-badge.bundled.js&#34;&gt;&lt;/script&gt;
+&lt;p&gt;&lt;ms-store-badge
+productid=&#34;9nlpj48cz2xt&#34;
+productname=&#34;PolStudio&#34;
+window-mode=&#34;full&#34;
+theme=&#34;auto&#34;
+language=&#34;en-us&#34;
+animation=&#34;on&#34;&gt;
+&lt;/ms-store-badge&gt;&lt;/p&gt;
+&lt;h3 id=&#34;comming-soon&#34;&gt;Comming Soon
+&lt;/h3&gt;&lt;p&gt;The documentation is in the process of being translated and will be available soon.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>PrivacyPolicy</title>
+        <link>https://fountain66.github.io/pp/</link>
+        <pubDate>Sat, 27 Apr 2024 15:23:41 +0800</pubDate>
+        
+        <guid>https://fountain66.github.io/pp/</guid>
+        <description>&lt;img src="https://fountain66.github.io/sixteen-miles-out-ScvYtpYzgFI-unsplash.jpg" alt="Featured image of post PrivacyPolicy" /&gt;&lt;p&gt;This application respects and protects the personal privacy rights of all users of the service. In order to provide you with more accurate and personalized services, this application will use and disclose your personal information in accordance with the provisions of this privacy policy. But this application will be highly diligent. This information is treated with caution. Except as otherwise provided in this privacy policy, the application will not disclose or provide such information to third parties without your prior consent. The application will update this privacy policy from time to times. By agreeing to the use of this app service agreement, you agree that you have consented to the entire content of this privacy policy. This privacy policy is an integral part of the use of this application service agreement.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Scope of application&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;When you use the app, the app will be entitled to use your documents (device folders and files), and the app will not proactively upload any of your information or files to other servers;&lt;/p&gt;
+&lt;p&gt;You understand and agree that the following information does not apply to this privacy policy:&lt;/p&gt;
+&lt;p&gt;A) keyword information that you enter when using the search service provided by this application platform;&lt;/p&gt;
+&lt;p&gt;b) The information collected by you in connection with this application, including but not limited to participation in the activity. Details of the transaction and evaluation;&lt;/p&gt;
+&lt;p&gt;c) violate the law or violate the rules of this application and the actions that have been taken against you by this application.&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Use of information&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;A) This application will not be made available to any unrelated third party. For sale. To share or trade your personal information, except with your prior permission, or the third party and the application (including the affiliate of the application) to serve you separately or jointly, and after the end of the service, it will be prohibited from accessing all such information that it has previously been able to access&lt;/p&gt;
+&lt;p&gt;b) This application also does not permit any third party to collect by any means. Edit. sell or distribute your personal information for free. Any user of this application platform who engages in the above activities shall have the right to terminate the service agreement with the user immediately upon discovery.&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Disclosure of information&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In the following cases, the application will disclose your personal information in whole or in part, in accordance with your personal will or by law:&lt;/p&gt;
+&lt;p&gt;A) disclosed to a third party by your prior consent;&lt;/p&gt;
+&lt;p&gt;b) to share your personal information with third parties in order to provide the products and services you have requested;&lt;/p&gt;
+&lt;p&gt;c) In accordance with the relevant provisions of the law, or the requirements of the administrative or judicial organs to the third party or the administration. Disclosure by the judiciary;&lt;/p&gt;
+&lt;p&gt;D) If you are in violation of China&amp;rsquo;s relevant laws or regulations or the Application service agreement or related rules, we need to disclose to third parties;&lt;/p&gt;
+&lt;p&gt;e) If you are a suitable intellectual property complainant and have filed a complaint, you should be required by the complainant to disclose it to the complainant so that the parties can deal with possible rights disputes;&lt;/p&gt;
+&lt;p&gt;f) in a transaction created on the application platform, if any party to the transaction has fulfilled or partially fulfilled the obligations of the transaction and made a request for disclosure of information, the application shall have the right to provide the user with such information as may be necessary to facilitate the completion of the transaction or the resolution of the dispute.&lt;/p&gt;
+&lt;p&gt;g) Other applications in accordance with the laws, regulations or website policies deemed appropriate disclosures.&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

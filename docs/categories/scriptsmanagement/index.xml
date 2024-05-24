@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>ScriptsManagement on Welcome</title>
+        <link>https://fountain66.github.io/categories/scriptsmanagement/</link>
+        <description>Recent content in ScriptsManagement on Welcome</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Fountain</copyright>
+        <lastBuildDate>Fri, 24 May 2024 09:32:50 +0800</lastBuildDate><atom:link href="https://fountain66.github.io/categories/scriptsmanagement/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>PolStudio</title>
+        <link>https://fountain66.github.io/p/polstudio/</link>
+        <pubDate>Fri, 24 May 2024 09:32:50 +0800</pubDate>
+        
+        <guid>https://fountain66.github.io/p/polstudio/</guid>
+        <description>&lt;img src="https://fountain66.github.io/pst.jpg" alt="Featured image of post PolStudio" /&gt;&lt;h3 id=&#34;polstudio-overview&#34;&gt;PolStudio Overview
+&lt;/h3&gt;&lt;p&gt;PolStudio is an efficient and convenient SQL/Scripts management tool that focuses on helping developers easily save, query, and execute SQL statements or script statements.&lt;/p&gt;
+&lt;h3 id=&#34;key-features&#34;&gt;Key Features
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Statement Saving and Management&lt;/strong&gt;: Allows users to save commonly used SQL statements or script statements for easy access and modification at any time. With classification and tagging features, users can organize and manage their code libraries effortlessly.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Metadata support&lt;/strong&gt;: allows you to add Markdown, Html, comments, and other information to statements.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Quick Query and Execution&lt;/strong&gt;: Equipped with a high-performance query engine, PolStudio can quickly execute SQL queries and display results. It also supports multiple database connections, enabling users to seamlessly switch between different database environments.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Result Processing and Export&lt;/strong&gt;: After executing a query, PolStudio provides intuitive result displays and supports further processing of query results through PowerShell or Python scripts. Users can customize scripts for data cleaning, analysis, or visualization, and export results in various formats such as CSV and Excel.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Security and Permission Management&lt;/strong&gt;: Emphasizes data security and provides strict permission management mechanisms. Different access permissions can be set for different users or user groups to ensure that sensitive data is not illegally accessed.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Integration and Extensibility&lt;/strong&gt;: Supports integration with various mainstream development environments and tools, such as Visual Studio Code and Jupyter Notebook. It also provides rich extension interfaces, allowing users to customize functions according to their needs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;applicable-scenarios&#34;&gt;Applicable Scenarios
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Database Administrators: Easily manage databases and execute complex SQL queries and scripts.&lt;/li&gt;
+&lt;li&gt;Data Analysts: Quickly query and analyze data, process data through PowerShell or Python scripts.&lt;/li&gt;
+&lt;li&gt;Software Developers: Save and execute SQL statements during the development process to ensure the correctness of database operations.&lt;/li&gt;
+&lt;li&gt;Normal User: If you don&amp;rsquo;t know how to write scripts, you can find verified scripts here or scripts shared by other users to run them directly to implement the corresponding functionality&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;download--install&#34;&gt;Download &amp;amp; Install
+&lt;/h3&gt;&lt;script type=&#34;module&#34; src=&#34;https://get.microsoft.com/badge/ms-store-badge.bundled.js&#34;&gt;&lt;/script&gt;
+&lt;p&gt;&lt;ms-store-badge
+productid=&#34;9nlpj48cz2xt&#34;
+productname=&#34;PolStudio&#34;
+window-mode=&#34;full&#34;
+theme=&#34;auto&#34;
+language=&#34;en-us&#34;
+animation=&#34;on&#34;&gt;
+&lt;/ms-store-badge&gt;&lt;/p&gt;
+&lt;h3 id=&#34;comming-soon&#34;&gt;Comming Soon
+&lt;/h3&gt;&lt;p&gt;The documentation is in the process of being translated and will be available soon.&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

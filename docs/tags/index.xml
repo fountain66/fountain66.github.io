@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Tags on Welcome</title>
+        <link>https://fountain66.github.io/tags/</link>
+        <description>Recent content in Tags on Welcome</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Fountain</copyright>
+        <lastBuildDate>Fri, 24 May 2024 09:32:50 +0800</lastBuildDate><atom:link href="https://fountain66.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Powershell</title>
+        <link>https://fountain66.github.io/tags/powershell/</link>
+        <pubDate>Fri, 24 May 2024 09:32:50 +0800</pubDate>
+        
+        <guid>https://fountain66.github.io/tags/powershell/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Python</title>
+        <link>https://fountain66.github.io/tags/python/</link>
+        <pubDate>Fri, 24 May 2024 09:32:50 +0800</pubDate>
+        
+        <guid>https://fountain66.github.io/tags/python/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Scripts</title>
+        <link>https://fountain66.github.io/tags/scripts/</link>
+        <pubDate>Fri, 24 May 2024 09:32:50 +0800</pubDate>
+        
+        <guid>https://fountain66.github.io/tags/scripts/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>SQL</title>
+        <link>https://fountain66.github.io/tags/sql/</link>
+        <pubDate>Fri, 24 May 2024 09:32:50 +0800</pubDate>
+        
+        <guid>https://fountain66.github.io/tags/sql/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Policy</title>
+        <link>https://fountain66.github.io/tags/policy/</link>
+        <pubDate>Sat, 27 Apr 2024 15:23:41 +0800</pubDate>
+        
+        <guid>https://fountain66.github.io/tags/policy/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Privacy</title>
+        <link>https://fountain66.github.io/tags/privacy/</link>
+        <pubDate>Sat, 27 Apr 2024 15:23:41 +0800</pubDate>
+        
+        <guid>https://fountain66.github.io/tags/privacy/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>

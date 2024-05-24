@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="高效、便捷的数据库查询/脚本管理工具">
+<title>PolStudio</title>
+
+<link rel='canonical' href='https://fountain66.github.io/zh-cn/p/polstudio/'>
+
+<link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="PolStudio">
+<meta property='og:description' content="高效、便捷的数据库查询/脚本管理工具">
+<meta property='og:url' content='https://fountain66.github.io/zh-cn/p/polstudio/'>
+<meta property='og:site_name' content='欢迎访问'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='SQL' /><meta property='article:tag' content='powershell' /><meta property='article:tag' content='python' /><meta property='article:tag' content='scripts' /><meta property='article:published_time' content='2024-05-24T09:32:50&#43;08:00'/><meta property='article:modified_time' content='2024-05-24T00:00:00&#43;00:00'/><meta property='og:image' content='https://fountain66.github.io/pst.jpg' />
+<meta name="twitter:title" content="PolStudio">
+<meta name="twitter:description" content="高效、便捷的数据库查询/脚本管理工具"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://fountain66.github.io/pst.jpg' />
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/zh-cn/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu2784d79100d54e6d7b99ba5295f1e25b_13078_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍺</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn">欢迎访问</a></h1>
+            <h2 class="site-description"></h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://apps.microsoft.com/search/publisher?name=Fountain'
+                        target="_blank"
+                        title="Microsoft Store"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256"><path fill="#F1511B" d="M121.666 121.666H0V0h121.666z"/><path fill="#80CC28" d="M256 121.666H134.335V0H256z"/><path fill="#00ADEF" d="M121.663 256.002H0V134.336h121.663z"/><path fill="#FBBC09" d="M256 256.002H134.335V134.336H256z"/></svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>存档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%BA%94%E7%94%A8/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>应用</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://fountain66.github.io/" >English</option>
+                                
+                                    <option value="https://fountain66.github.io/zh-cn/" selected>简体中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#简介">简介</a></li>
+        <li><a href="#主要功能特点">主要功能特点</a></li>
+        <li><a href="#适用场景">适用场景</a></li>
+        <li><a href="#下载安装">下载安装</a></li>
+        <li><a href="#环境要求">环境要求</a></li>
+        <li><a href="#快速入门">快速入门</a></li>
+        <li><a href="#新建语句">新建语句</a></li>
+        <li><a href="#管理项目界面">管理项目界面</a></li>
+        <li><a href="#管理数据源">管理数据源</a>
+          <ol>
+            <li><a href="#支持的数据库">✅支持的数据库</a></li>
+          </ol>
+        </li>
+        <li><a href="#脚本和扩展--插件系统">脚本和扩展 / 插件系统</a>
+          <ol>
+            <li><a href="#支持的脚本语言">支持的脚本语言</a></li>
+            <li><a href="#公共插件">公共插件</a></li>
+            <li><a href="#示例1-脚本调试文件">示例1-脚本调试文件</a></li>
+            <li><a href="#示例2-版本控制">示例2-版本控制</a></li>
+            <li><a href="#示例3-lua">示例3-Lua</a></li>
+          </ol>
+        </li>
+        <li><a href="#左侧边栏">左侧边栏</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/zh-cn/p/polstudio/">
+                
+                    <img src="/pst.jpg" loading="lazy" alt="Featured image of post PolStudio" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/zh-cn/categories/%E8%84%9A%E6%9C%AC%E7%AE%A1%E7%90%86/" >
+                脚本管理
+            </a>
+        
+            <a href="/zh-cn/categories/sql/" >
+                SQL
+            </a>
+        
+            <a href="/zh-cn/categories/microsoft-store/" >
+                Microsoft Store
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/polstudio/">PolStudio</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            高效、便捷的数据库查询/脚本管理工具
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">May 24, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 12 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+        <footer class="article-translations">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+            <div>
+                
+                    <a href="https://fountain66.github.io/p/polstudio/" class="link">English</a>
+                
+            </div>
+        </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h3 id="简介">简介
+</h3><p>PolStudio 是一款高效、便捷的数据库查询/脚本管理工具，专注于帮助您轻松保存、查询和执行 SQL 语句或脚本代码。</p>
+<h3 id="主要功能特点">主要功能特点
+</h3><ul>
+<li><strong>语句保存与管理</strong>：允许用户保存常用的 SQL 语句或脚本语句，方便随时调用和修改。通过分类和标签功能，用户可以轻松组织和管理代码库或查看历史版本。</li>
+<li><strong>元数据支持</strong>：允许为语句添加Markdown、Html、备注等信息。</li>
+<li><strong>快速查询与执行</strong>：内置高性能的查询引擎，PolStudio 能够迅速执行 SQL 查询并展示结果。同时，支持多数据库连接，让用户能够无缝切换不同的数据库环境。</li>
+<li><strong>结果处理与导出</strong>：执行查询后，PolStudio 提供直观的结果展示，将结果导出为 CSV、Excel 等多种格式，并支持通过 PowerShell 或 Python 脚本对查询结果进行进一步处理。用户可以自定义脚本，对数据进行清洗、分析或可视化。</li>
+<li><strong>安全性</strong>：重视数据的安全性，数据保存在加密数据库中，确保敏感数据不被非法访问。</li>
+<li><strong>集成与扩展</strong>：支持与多种主流开发环境和工具集成，如 Visual Studio Code 等。同时，提供了丰富的扩展接口，允许用户根据自己的需求定制功能。</li>
+</ul>
+<h3 id="适用场景">适用场景
+</h3><ul>
+<li>数据库管理员：轻松查找和执行已保存的 SQL 查询和脚本。</li>
+<li>数据分析师：快速查询和分析数据，通过 PowerShell 或 Python 脚本对数据进行处理。</li>
+<li>软件开发者：在开发过程中，保存和执行 SQL 语句，并可以查看历史版本（需添加该自定义功能）。</li>
+<li>普通用户：如果您不会编写脚本，您可以在这里找到已经过验证的脚本或其他用户分享的脚本直接运行，实现相应的功能。</li>
+</ul>
+<h3 id="下载安装">下载安装
+</h3><script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"></script>
+<p><ms-store-badge
+productid="9nlpj48cz2xt"
+productname="PolStudio"
+window-mode="full"
+theme="auto"
+language="zh-cn"
+animation="on">
+</ms-store-badge></p>
+<h3 id="环境要求">环境要求
+</h3><p>建议根据需要安装下面的扩展程序。（在新建向导中会有相应提示官网下载链接）</p>
+<ul>
+<li>Windows Terminal （建议安装，Windows11已内置）</li>
+<li>Powershell Core</li>
+<li>Python</li>
+</ul>
+<h3 id="快速入门">快速入门
+</h3><p>您可以在其他数据库查询工具（对于SQL，可以使用DBeaver；对于Powershell和Python，可以使用visual studio code）中将已验证过的语句运行成功后保存在这里，以备下次快速执行。</p>
+<p><img src="/mdimg/img1.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="主界面"
+	
+	
+></p>
+<h3 id="新建语句">新建语句
+</h3><p><img src="/mdimg/ps-gd-new.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="向导"
+	
+	
+>
+第1步：点击【向导-新建项目】，选择代码类型，依次输入 <code>标题</code> 、<code>副标题</code> &hellip;等元数据。<br>
+第2步：将写好的语句粘贴在 <code>代码</code> 中，注意：<code>参数</code>用于在执行代码前进行替换，例如下面的语句：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">T_Film</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">director</span><span class="o">=</span><span class="s1">&#39;?dir?&#39;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="k">year</span><span class="o">=</span><span class="s1">&#39;?year?&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>参数</code>：?dir?=zhang;  ?year?=2024;<br>
+<strong>⚠注意：多个参数请以分号分隔。</strong><br>
+执行时将SQL语句会被替换成如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">T_Film</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">director</span><span class="o">=</span><span class="s1">&#39;zhang&#39;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="k">year</span><span class="o">=</span><span class="s1">&#39;2024&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>第3步：点击最下方的<code>保存</code>按钮。<br>
+对于SQL语句，需要稍后设置数据源后方可执行查询语句。</p>
+<p>对于Powershell和Python等脚本方法与上述类似，若您的脚本需要管理员权限，请打开向导最上方<code>类型</code>右侧的<code>管理员方式运行</code>开关。</p>
+<p><strong>恭喜，到此您将可以在主界面左侧列表中看到刚刚新创建的项目。</strong></p>
+<h3 id="管理项目界面">管理项目界面
+</h3><p><img src="/mdimg/ps-gd-s.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+><br>
+在左侧列表中打开项目后App右侧将会显示如上图所示的界面，在这里可以修改语句、执行、导出等所有操作。<br>
+注意：对项目所做的修改务必通过按钮<code>12</code>或<code>13</code>进行保存，否则更改将会丢失。<br>
+<code>1</code>:标题。如需修改可点击按钮<code>19</code>进行修改。<br>
+<code>2</code>:副标题。<br>
+<code>3</code>:导出sql查询结果数据时的文件名前缀。对于脚本，请将此值设置为类似<code>pwsh|.ps1</code>或<code>python|.py</code>的格式。<br>
+<code>4</code>:选择执行SQL语句时要连接的数据库。<br>
+<code>5</code>:管理数据库连接。<br>
+<code>6</code>:编辑代码。<br>
+<code>7</code>:使用参数来替换源代码中的占位字符串。<br>
+<code>8</code>:复制源代码或替换后的代码。<br>
+<code>9</code>:执行SQL查询或运行powershell/python等脚本语句。<br>
+<code>10</code>:执行SQL非查询语句或运行powershell/python等脚本语句。<br>
+<code>11</code>:停止正在执行的查询任务。<br>
+<code>12</code>:将当前项目另存为一份新的项目。<br>
+<code>13</code>:保存对当前项目所做的更改。<br>
+<code>14</code>:删除当前项目。<br>
+<code>15</code>:参数，用以替换源代码中的占位字符串，多个参数请以分号分隔。<br>
+<code>16</code>:用于展示附加在项目中的markdown文档，如需修改请点击按钮<code>24</code>。<br>
+<code>17</code>:用于展示SQL语句的查询结果。<br>
+<code>18</code>:用于展示附加在项目中的html网页，如需修改请点击按钮<code>25</code>或<code>21</code>展开后的第一个按钮。<br>
+<code>19</code>:用于展示和修改项目的更多信息，其中可设置备注等。<br>
+<code>20</code>:用于在Data中搜索。<br>
+<code>21</code>:Edge枢纽的功能组。<br>
+<code>22</code>:将Data中的数据导出为Xlsx/CSV或txt等格式。<br>
+<code>23</code>:*插件系统，可以通过编写powershell/python/lua脚本来为Data界面的右键菜单增加扩展功能，此部分功能强大，您可以在本站找到已编写好的脚本代码或他人分享的脚本来为自己的右键菜单增加相应功能。<br>
+<code>24</code>:编辑markdown文本。<br>
+<code>25</code>:编辑html网站或代码。<br>
+<code>26</code>:快速将Data中的数据导出为其他格式并打开。<br>
+<code>27</code>:打印Data中的数据。<br>
+<code>28</code>:将Data中的数据作为xlsx附件并附加到邮件App。请注意，此功能仅支持旧版的邮件App，如您使用的是新Outlook邮件客户端，附件将不会添加。</p>
+<h3 id="管理数据源">管理数据源
+</h3><p>若要连接数据库通过SQL语句查询数据，需要设置相应的数据源及连接字符串。</p>
+<h4 id="支持的数据库">✅支持的数据库
+</h4><p>以下数据库经过测试可支持：</p>
+<ul>
+<li>Sybase： Adaptive Server Enterprise 16.0.03.01</li>
+<li>Oracle：Oracle Database 19c Enterprise Edition Release 19.0.0.0.0</li>
+<li>MySQL ：8.0</li>
+<li>SQLite：SQLite3（暂不支持加密数据库）</li>
+<li>达梦：DM 8.1.3.12</li>
+<li>ODBC：以系统为准。除上述已测试数据库外，其他数据库可通过安装相应驱动后使用ODBC来连接。</li>
+</ul>
+<p>⛔2024.5.11经测试发现连接Sybase版本15时不成功，此问题可能在将来版本中被修复。</p>
+<p>点击【数据源】按钮，将打开一个新窗口，用于添加和修改数据源。</p>
+<ul>
+<li>
+<p>添加数据源</p>
+<ul>
+<li>
+<p>第1步：选择数据库类型后可以点击右侧的【示例】按钮，然后根据需要修改<code>名称</code>、<code>友好名称</code>、<code>连接字符串</code>、<code>备注</code>。<br>
+名称：建议使用英文，不要重复。<br>
+友好名称：便于识别的数据库名称，支持emoji。<br>
+连接字符串：请修改示例按钮生成的模板连接字符串，将其中的数据库
+IP地址、端口号、用户名、密码等修改为您要连接的数据库。<br>
+备注：用于在选择</p>
+</li>
+<li>
+<p>第2步：点击【预览添加】按钮，再点击底部的【保存】。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>修改数据源<br>
+在<code>管理数据源</code>窗口中下部的编辑器中直接修改数据源。若需要暂时隐藏该数据源，可在行号前加上#号。修改完毕后点击【保存】按钮并关闭窗口。</p>
+</li>
+</ul>
+<h3 id="脚本和扩展--插件系统">脚本和扩展 / 插件系统
+</h3><h4 id="支持的脚本语言">支持的脚本语言
+</h4><ul>
+<li>powershell</li>
+<li>python</li>
+<li>lua</li>
+</ul>
+<p>❇️此部分内容需要您对json及powershell/python/lua（三种脚本语言任选其一）有基本的了解。<br>
+点击按钮<code>23</code>展开菜单后再点击<code>编辑插件集</code>，即可编写自定义脚本来扩充邮件菜单功能。<br>
+示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;comment&#34;</span><span class="p">:</span><span class="s2">&#34;这里填写的内容将显示为按钮的Tooltip&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;status&#34;</span><span class="p">:</span><span class="s2">&#34;enable&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;btn&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;demo script&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;loaddata&#34;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;runas&#34;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;icon&#34;</span><span class="p">:</span> <span class="s2">&#34;ms-appdata:///local/your icon.png&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;script&#34;</span><span class="p">:</span> <span class="s2">&#34;read-host&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;scripttype&#34;</span><span class="p">:</span> <span class="s2">&#34;pwsh&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;comment&#34;</span><span class="p">:</span><span class="s2">&#34;分隔符&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;status&#34;</span><span class="p">:</span><span class="s2">&#34;enable&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;sep&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},{</span><span class="err">...</span><span class="p">},{</span><span class="err">...</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在script中，可以直接书写简单的代码。若代码量很大，可以新建一个以感叹号!开头的项目，随后将其标题填入script中以引用。<br>
+编辑完后点击<code>重载插件集</code>将可以看到更新后的右键菜单。</p>
+<h4 id="公共插件">公共插件
+</h4><p>您可以新建一个名为<code>#CommonAddins#</code>的项目，它将在所有的项目中都可用。将在下面的示例中提到。</p>
+<h4 id="示例1-脚本调试文件">示例1-脚本调试文件
+</h4><p>为方便调试编写脚本，我们可以添加一个功能，用来找到调试文件。</p>
+<ul>
+<li>第1步：新建标题为<code>#CommonAddins#</code>的项目,粘贴下面的代码到源代码中并保存，如已存在该项目请修改内容将如下中括号内的数据部分添加进去：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">[</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;comment&#34;</span><span class="p">:</span> <span class="s2">&#34;调试&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="s2">&#34;enable&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;loaddata&#34;</span><span class="p">:</span> <span class="s2">&#34;true&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;btn&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Common&gt;Debug&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;icon&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;script&#34;</span><span class="p">:</span> <span class="s2">&#34;#获取当前脚本运行路径\n$x=$MyInvocation.MyCommand.Definition\n$x.Substring($x.Length-8,5)|Write-Host -ForegroundColor Green\n\n\n#复制若干文件到剪切板\nAdd-Type -AssemblyName System.Windows.Forms\n$files = [System.Collections.Specialized.StringCollection]::new()\n$files.Add($x)\n[System.Windows.Forms.Clipboard]::SetFileDropList($files)\n\n\nRead-Host \&#34;ok\&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>json中的loaddata字段设置为true后生成的脚本中会包含「Data」中的数据，包括完整的数据/鼠标选中的行数据/鼠标选中的单元格 等等。<br>
+如您无需在所有项目中可用，也可以不用新建<code>#CommonAddins#</code>项目，直接在项目的编辑插件集中填入该json内容。</p>
+</blockquote>
+<ul>
+<li>第2步：重载插件集。</li>
+</ul>
+<p>您将可以看到在【Data】中右键菜单多出一个Common菜单项，其展开后有个名为Debug的子菜单。</p>
+<ul>
+<li>第3步：点击Debug，将会复制脚本文件到剪切板。</li>
+<li>第4步：在资源管理器任意目录空白处粘贴文件，并使用代码编辑器如visual studio code打开。<br>
+可以看到app生成的脚本代码，您可以在#release code后面编写自己的代码，用于实现自己的自定义功能，功能完成后再将release code部分的代码拷贝出来用作引用项目插件使用。</li>
+</ul>
+<h4 id="示例2-版本控制">示例2-版本控制
+</h4><p>接下来将演示如何添加版本控制扩展功能到所有项目中。</p>
+<ul>
+<li>第1步：安装TortoiseGit。</li>
+<li>第2步：新建一个可引用项目。标题名为 <code>!getVersions</code>，请复制下面的代码到<code>!getVersions</code>的源代码中。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="kd">function</span><span class="w"> </span><span class="nb">Encrypt-String</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">param</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="no">string</span><span class="p">]</span><span class="nv">$plaintext</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="no">byte[]</span><span class="p">]</span><span class="nv">$key</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="no">byte[]</span><span class="p">]</span><span class="nv">$iv</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$aes</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="py">Security</span><span class="p">.</span><span class="py">Cryptography</span><span class="p">.</span><span class="py">AesCryptoServiceProvider</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$aes</span><span class="p">.</span><span class="py">Key</span> <span class="p">=</span> <span class="nv">$key</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$aes</span><span class="p">.</span><span class="py">IV</span> <span class="p">=</span> <span class="nv">$iv</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$aes</span><span class="p">.</span><span class="py">Mode</span> <span class="p">=</span> <span class="p">[</span><span class="no">System.Security.Cryptography.CipherMode</span><span class="p">]::</span><span class="n">CBC</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$aes</span><span class="p">.</span><span class="py">Padding</span> <span class="p">=</span> <span class="p">[</span><span class="no">System.Security.Cryptography.PaddingMode</span><span class="p">]::</span><span class="n">PKCS7</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$encryptor</span> <span class="p">=</span> <span class="nv">$aes</span><span class="p">.</span><span class="py">CreateEncryptor</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$memoryStream</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="py">IO</span><span class="p">.</span><span class="py">MemoryStream</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$cryptoStream</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="py">Security</span><span class="p">.</span><span class="py">Cryptography</span><span class="p">.</span><span class="py">CryptoStream</span> <span class="nv">$memoryStream</span><span class="p">,</span> <span class="nv">$encryptor</span><span class="p">,</span> <span class="s1">&#39;Write&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$writer</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="py">IO</span><span class="p">.</span><span class="py">StreamWriter</span> <span class="nv">$cryptoStream</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$writer</span><span class="p">.</span><span class="py">Write</span><span class="p">(</span><span class="nv">$plaintext</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$writer</span><span class="p">.</span><span class="py">Flush</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$cryptoStream</span><span class="p">.</span><span class="py">FlushFinalBlock</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$memoryStream</span><span class="p">.</span><span class="py">Flush</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$encryptedData</span> <span class="p">=</span> <span class="p">[</span><span class="no">Convert</span><span class="p">]::</span><span class="n">ToBase64String</span><span class="p">(</span><span class="nv">$memoryStream</span><span class="p">.</span><span class="py">ToArray</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$writer</span><span class="p">.</span><span class="py">Close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$cryptoStream</span><span class="p">.</span><span class="py">Close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$memoryStream</span><span class="p">.</span><span class="py">Close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nv">$encryptedData</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span><span class="w"> </span><span class="nb">Decrypt-String</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">param</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="no">string</span><span class="p">]</span><span class="nv">$encryptedText</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="no">byte[]</span><span class="p">]</span><span class="nv">$key</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="no">byte[]</span><span class="p">]</span><span class="nv">$iv</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$aes</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="py">Security</span><span class="p">.</span><span class="py">Cryptography</span><span class="p">.</span><span class="py">AesCryptoServiceProvider</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$aes</span><span class="p">.</span><span class="py">Key</span> <span class="p">=</span> <span class="nv">$key</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$aes</span><span class="p">.</span><span class="py">IV</span> <span class="p">=</span> <span class="nv">$iv</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$aes</span><span class="p">.</span><span class="py">Mode</span> <span class="p">=</span> <span class="p">[</span><span class="no">System.Security.Cryptography.CipherMode</span><span class="p">]::</span><span class="n">CBC</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$aes</span><span class="p">.</span><span class="py">Padding</span> <span class="p">=</span> <span class="p">[</span><span class="no">System.Security.Cryptography.PaddingMode</span><span class="p">]::</span><span class="n">PKCS7</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$decryptor</span> <span class="p">=</span> <span class="nv">$aes</span><span class="p">.</span><span class="py">CreateDecryptor</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$encryptedBytes</span> <span class="p">=</span> <span class="p">[</span><span class="no">Convert</span><span class="p">]::</span><span class="n">FromBase64String</span><span class="p">(</span><span class="nv">$encryptedText</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$memoryStream</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="py">IO</span><span class="p">.</span><span class="py">MemoryStream</span> <span class="nv">$encryptedBytes</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="nv">$encryptedBytes</span><span class="p">.</span><span class="py">Length</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$cryptoStream</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="py">Security</span><span class="p">.</span><span class="py">Cryptography</span><span class="p">.</span><span class="py">CryptoStream</span> <span class="nv">$memoryStream</span><span class="p">,</span> <span class="nv">$decryptor</span><span class="p">,</span> <span class="s1">&#39;Read&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$reader</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="py">IO</span><span class="p">.</span><span class="py">StreamReader</span> <span class="nv">$cryptoStream</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$decryptedData</span> <span class="p">=</span> <span class="nv">$reader</span><span class="p">.</span><span class="py">ReadToEnd</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$reader</span><span class="p">.</span><span class="py">Close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$cryptoStream</span><span class="p">.</span><span class="py">Close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$memoryStream</span><span class="p">.</span><span class="py">Close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nv">$decryptedData</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 函数：将字符串进行 Base64 编码</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span><span class="w"> </span><span class="nb">ConvertTo-Base64</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">param</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="no">string</span><span class="p">]</span><span class="nv">$inputString</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$bytes</span> <span class="p">=</span> <span class="p">[</span><span class="no">System.Text.Encoding</span><span class="p">]::</span><span class="n">UTF8</span><span class="p">.</span><span class="py">GetBytes</span><span class="p">(</span><span class="nv">$inputString</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$base64String</span> <span class="p">=</span> <span class="p">[</span><span class="no">System.Convert</span><span class="p">]::</span><span class="n">ToBase64String</span><span class="p">(</span><span class="nv">$bytes</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nv">$base64String</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 函数：将 Base64 编码的字符串进行解码</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span><span class="w"> </span><span class="nb">ConvertFrom-Base64</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">param</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="no">string</span><span class="p">]</span><span class="nv">$base64String</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$bytes</span> <span class="p">=</span> <span class="p">[</span><span class="no">System.Convert</span><span class="p">]::</span><span class="n">FromBase64String</span><span class="p">(</span><span class="nv">$base64String</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$decodedString</span> <span class="p">=</span> <span class="p">[</span><span class="no">System.Text.Encoding</span><span class="p">]::</span><span class="n">UTF8</span><span class="p">.</span><span class="py">GetString</span><span class="p">(</span><span class="nv">$bytes</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nv">$decodedString</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span><span class="w"> </span><span class="nb">ExportObjectPropertiesToTextFile</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">param</span> <span class="p">(</span>  
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="nb">Parameter</span><span class="p">(</span><span class="na">Mandatory</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>  
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="no">object</span><span class="p">]</span><span class="nv">$Object</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">          
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="nb">Parameter</span><span class="p">(</span><span class="na">Mandatory</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>  
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="no">string</span><span class="p">]</span><span class="nv">$OutputFilePath</span>  
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="c"># 创建一个新的文件流，准备写入  </span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$outputStream</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="py">IO</span><span class="p">.</span><span class="py">StreamWriter</span><span class="p">(</span><span class="nv">$OutputFilePath</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="c"># # 获取对象的所有属性  </span>
+</span></span><span class="line"><span class="cl">    <span class="c"># $properties = $Object | Get-Member -MemberType Properties |Sort-Object Name | Select-Object -ExpandProperty Name  </span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="c"># # 遍历每个属性，并将其值写入文件  </span>
+</span></span><span class="line"><span class="cl">    <span class="c"># foreach ($property in $properties) {  </span>
+</span></span><span class="line"><span class="cl">    <span class="c">#     $value = $Object.$property  </span>
+</span></span><span class="line"><span class="cl">    <span class="c">#     $outputStream.WriteLine(&#34;--------- $property --------------------------------------------&#34;)  </span>
+</span></span><span class="line"><span class="cl">    <span class="c">#     $outputStream.WriteLine(&#34;$value&#34;)</span>
+</span></span><span class="line"><span class="cl">    <span class="c">#     $outputStream.WriteLine(&#34;&#34;)</span>
+</span></span><span class="line"><span class="cl">    <span class="c">#     $outputStream.WriteLine(&#34;&#34;)</span>
+</span></span><span class="line"><span class="cl">    <span class="c">#     $outputStream.WriteLine(&#34;&#34;)</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># }  </span>
+</span></span><span class="line"><span class="cl">    <span class="c"># 获取对象的所有属性，并直接遍历它们  </span>
+</span></span><span class="line"><span class="cl">    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$property</span> <span class="k">in</span> <span class="nv">$Object</span><span class="p">.</span><span class="py">PSObject</span><span class="p">.</span><span class="n">Properties</span><span class="p">)</span> <span class="p">{</span> 
+</span></span><span class="line"><span class="cl">        <span class="nv">$pn</span> <span class="p">=</span> <span class="nv">$property</span><span class="p">.</span><span class="py">Name</span><span class="p">.</span><span class="py">PadRight</span><span class="p">(</span><span class="mf">30</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$pv</span> <span class="p">=</span> <span class="nv">$property</span><span class="p">.</span><span class="py">Value</span>  
+</span></span><span class="line"><span class="cl">        <span class="nv">$outputStream</span><span class="p">.</span><span class="py">WriteLine</span><span class="p">(</span><span class="s2">&#34;-------------------------  </span><span class="nv">$pn</span><span class="s2"> ----------------------&#34;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">        <span class="nv">$outputStream</span><span class="p">.</span><span class="py">WriteLine</span><span class="p">(</span><span class="s2">&#34;</span><span class="nv">$pv</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$outputStream</span><span class="p">.</span><span class="py">WriteLine</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$outputStream</span><span class="p">.</span><span class="py">WriteLine</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$outputStream</span><span class="p">.</span><span class="py">WriteLine</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> 
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="c"># 关闭文件流  </span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$outputStream</span><span class="p">.</span><span class="py">Close</span><span class="p">()</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="nb">Write-Host</span> <span class="s2">&#34;Object properties have been exported to </span><span class="nv">$OutputFilePath</span><span class="s2">&#34;</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span><span class="w"> </span><span class="nb">CreateAndClearFolder</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">param</span> <span class="p">(</span>  
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="nb">Parameter</span><span class="p">(</span><span class="na">Mandatory</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>  
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="no">string</span><span class="p">]</span><span class="nv">$FolderPath</span>  
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>  
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">    <span class="c"># 检查文件夹是否存在  </span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">-Path</span> <span class="nv">$FolderPath</span> <span class="n">-PathType</span> <span class="n">Container</span><span class="p">)</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">        <span class="c"># 文件夹存在，清空文件夹内容  </span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;文件夹已存在，正在清空内容...&#34;</span>  
+</span></span><span class="line"><span class="cl">        <span class="nb">Remove-Item</span> <span class="n">-Path</span> <span class="nv">$FolderPath</span><span class="p">\*</span> <span class="n">-Recurse</span> <span class="n">-Force</span>  
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">        <span class="c"># 文件夹不存在，创建文件夹  </span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;文件夹不存在，正在创建...&#34;</span>  
+</span></span><span class="line"><span class="cl">        <span class="nb">New-Item</span> <span class="n">-Path</span> <span class="nv">$FolderPath</span> <span class="n">-ItemType</span> <span class="n">Directory</span>  
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>  
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">    <span class="c"># 函数结束，现在 $FolderPath 指向的文件夹是空的或者已经被重新创建了  </span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> 
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="c"># 示例用法  </span>
+</span></span><span class="line"><span class="cl"><span class="c"># 创建一个示例对象  </span>
+</span></span><span class="line"><span class="cl"><span class="c"># $exampleObject = New-Object PSObject -Property @{  </span>
+</span></span><span class="line"><span class="cl"><span class="c">#     Name = &#34;John Doe&#34;  </span>
+</span></span><span class="line"><span class="cl"><span class="c">#     Age = 30  </span>
+</span></span><span class="line"><span class="cl"><span class="c">#     Occupation = @&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c">#     hellow</span>
+</span></span><span class="line"><span class="cl"><span class="c">#     wfas</span>
+</span></span><span class="line"><span class="cl"><span class="c">#     test</span>
+</span></span><span class="line"><span class="cl"><span class="c"># &#34;@</span>
+</span></span><span class="line"><span class="cl"><span class="c"># }  </span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="c"># # 调用函数，将对象属性导出到文本文件  </span>
+</span></span><span class="line"><span class="cl"><span class="c"># ExportObjectPropertiesToTextFile -Object $exampleObject -OutputFilePath &#34;d:\33.txt&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$keyString</span> <span class="p">=</span> <span class="nb">ConvertTo-Base64</span> <span class="n">-inputString</span> <span class="s2">&#34;0123456789abcdef0123456789abcdef&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$ivString</span> <span class="p">=</span> <span class="nb">ConvertTo-Base64</span> <span class="n">-inputString</span> <span class="s2">&#34;0123456789abcdef&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$key</span> <span class="p">=</span> <span class="p">[</span><span class="no">Convert</span><span class="p">]::</span><span class="n">FromBase64String</span><span class="p">(</span><span class="nv">$keyString</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$iv</span> <span class="p">=</span> <span class="p">[</span><span class="no">Convert</span><span class="p">]::</span><span class="n">FromBase64String</span><span class="p">(</span><span class="nv">$ivString</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># $plaintext = &#34;Hello, World!&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c"># $encryptedText = Encrypt-String -plaintext $plaintext -key $key -iv $iv</span>
+</span></span><span class="line"><span class="cl"><span class="c"># Write-Output &#34;Encrypted Text: $encryptedText&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># $decryptedText = Decrypt-String -encryptedText $encryptedText -key $key -iv $iv</span>
+</span></span><span class="line"><span class="cl"><span class="c"># Write-Output &#34;Decrypted Text: $decryptedText&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$uid</span> <span class="p">=</span> <span class="nv">$pol_ssql</span><span class="p">.</span><span class="n">UID</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$vfolder</span> <span class="p">=</span> <span class="p">[</span><span class="no">System.IO.Path</span><span class="p">]::</span><span class="n">Combine</span><span class="p">(</span><span class="nv">$pol_appd</span><span class="p">,</span> <span class="s2">&#34;versions&#34;</span><span class="p">,</span> <span class="nv">$uid</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$lst</span> <span class="p">=</span> <span class="p">[</span><span class="no">System.Collections.ArrayList</span><span class="p">]::</span><span class="n">new</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">([</span><span class="no">System.IO.Directory</span><span class="p">]::</span><span class="n">Exists</span><span class="p">(</span><span class="nv">$vfolder</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$fs</span> <span class="p">=</span> <span class="nb">Get-ChildItem</span> <span class="nv">$vfolder</span>
+</span></span><span class="line"><span class="cl">    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$f</span> <span class="k">in</span> <span class="nv">$fs</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$fl</span> <span class="p">=</span> <span class="nb">Get-Content</span> <span class="nv">$f</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$d</span> <span class="p">=</span> <span class="nb">Decrypt-String</span> <span class="n">-encryptedText</span> <span class="nv">$fl</span> <span class="n">-key</span> <span class="nv">$key</span> <span class="n">-iv</span> <span class="nv">$iv</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$d</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$mobj</span> <span class="p">=</span> <span class="nv">$d</span> <span class="p">|</span> <span class="nb">convertfrom-json</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$lst</span><span class="p">.</span><span class="py">Add</span><span class="p">(</span><span class="nv">$mobj</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Write-Host</span> <span class="s2">&#34;该项目暂无版本列表&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Read-Host</span> <span class="s2">&#34;press enter to exit&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$tmGitRoot</span> <span class="p">=</span> <span class="p">[</span><span class="no">System.IO.Path</span><span class="p">]::</span><span class="n">Combine</span><span class="p">([</span><span class="no">System.IO.Path</span><span class="p">]::</span><span class="n">GetTempPath</span><span class="p">(),</span> <span class="s2">&#34;polstugit&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$lst</span><span class="p">.</span><span class="py">Count</span> <span class="o">-gt</span> <span class="mf">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$t0</span> <span class="p">=</span> <span class="nv">$lst</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$tmpFd</span> <span class="p">=</span> <span class="p">[</span><span class="no">System.IO.Path</span><span class="p">]::</span><span class="n">Combine</span><span class="p">(</span><span class="nv">$tmGitRoot</span><span class="p">,</span> <span class="nv">$t0</span><span class="p">.</span><span class="n">Id</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$tid</span> <span class="p">=</span> <span class="nv">$t0</span><span class="p">.</span><span class="py">Id</span>
+</span></span><span class="line"><span class="cl">    <span class="n">CreateAndClearFolder</span> <span class="n">-FolderPath</span> <span class="nv">$tmpFd</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$gitFl</span> <span class="p">=</span> <span class="p">[</span><span class="no">System.IO.Path</span><span class="p">]::</span><span class="n">Combine</span><span class="p">(</span><span class="nv">$tmpFd</span><span class="p">,</span> <span class="s2">&#34;src-</span><span class="nv">$tid</span><span class="s2">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Set-Location</span> <span class="nv">$tmpFd</span>
+</span></span><span class="line"><span class="cl">    <span class="n">git</span> <span class="n">init</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="p">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">-lt</span> <span class="nv">$lst</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span> <span class="nv">$i</span><span class="p">++)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$em</span> <span class="p">=</span> <span class="nv">$lst</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ExportObjectPropertiesToTextFile</span> <span class="n">-Object</span> <span class="nv">$em</span> <span class="n">-OutputFilePath</span> <span class="nv">$gitFl</span>
+</span></span><span class="line"><span class="cl">        <span class="n">git</span> <span class="n">add</span> <span class="p">.</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$udate</span> <span class="p">=</span> <span class="nv">$em</span><span class="p">.</span><span class="py">UptTm</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$his</span> <span class="p">=</span> <span class="nv">$em</span><span class="p">.</span><span class="py">Tag10</span>
+</span></span><span class="line"><span class="cl">        <span class="c">#git commit --date=&#34;YYYY-MM-DD HH:MM:SS&#34; -m &#34;Initial commit with custom date&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">git</span> <span class="n">commit</span> <span class="p">-</span><span class="n">-date</span><span class="p">=</span><span class="s2">&#34;</span><span class="nv">$udate</span><span class="s2">&#34;</span> <span class="n">-m</span> <span class="s2">&#34;V</span><span class="nv">$i</span><span class="s2">   </span><span class="nv">$his</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c">#git log</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Set-Location</span> <span class="s2">&#34;C:\Program Files\TortoiseGit\bin\&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">./</span><span class="n">TortoiseGitProc</span><span class="p">.</span><span class="py">exe</span> <span class="p">/</span><span class="n">command</span><span class="err">:</span><span class="n">log</span> <span class="p">/</span><span class="n">path</span> <span class="s2">&#34;</span><span class="nv">$tmpFd</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">#Read-Host &#34;press enter to exit&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>第3步：新建标题为<code>#CommonAddins#</code>的项目,粘贴下面的代码到源代码中并保存，如已存在该项目请修改内容将如下中括号内的数据部分添加进去：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">[</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;comment&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="s2">&#34;enable&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;loaddata&#34;</span><span class="p">:</span> <span class="s2">&#34;false&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;btn&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;版本控制&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;icon&#34;</span><span class="p">:</span> <span class="s2">&#34;ms-appdata:///local/myfiles/ico/icons8_time_span_16.png&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;script&#34;</span><span class="p">:</span> <span class="s2">&#34;!getVersions&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>请修改上述代码中的部分字段，如icon，若找不到该图标文件，会显示默认的图标。</p>
+</blockquote>
+<ul>
+<li>第4步：重载插件集或重新打开项目，也可以重启app。</li>
+</ul>
+<p><strong>到这里您将可以在每个项目【Data】的右键菜单中看到一个名为版本控制的功能。</strong></p>
+<h4 id="示例3-lua">示例3-Lua
+</h4><p>lua用于调用主程序中公开的API接口。关于更多接口内容，将在后续文档中提供。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">[</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;comment&#34;</span><span class="p">:</span> <span class="s2">&#34;刷新缓存(Lua)&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="s2">&#34;enable&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;btn&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Common&gt;刷新缓存列表&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;icon&#34;</span><span class="p">:</span> <span class="s2">&#34;ms-appdata:///local/my_tmp_icons/24/shell32_00239.ico&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;scripttype&#34;</span><span class="p">:</span> <span class="s2">&#34;lua&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;script&#34;</span><span class="p">:</span> <span class="s2">&#34;ui:RefreshCacheBtn()&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;comment&#34;</span><span class="p">:</span> <span class="s2">&#34;刷新UI(Lua)&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="s2">&#34;enable&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;btn&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;刷新UI&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;icon&#34;</span><span class="p">:</span> <span class="s2">&#34;ms-appdata:///local/my_tmp_icons/24/shell32_00239.ico&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;scripttype&#34;</span><span class="p">:</span> <span class="s2">&#34;lua&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;script&#34;</span><span class="p">:</span> <span class="s2">&#34;ui:RefreshDg() ui:TryRefreshBindings()&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;comment&#34;</span><span class="p">:</span> <span class="s2">&#34;保存修改到缓存(Lua),只保存当前显示出来的数据，如果使用了筛选，其他数据将会丢失！！！&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="s2">&#34;enable&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;btn&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Common&gt;保存修改到缓存⚠&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;icon&#34;</span><span class="p">:</span> <span class="s2">&#34;ms-appdata:///local/my_tmp_icons/i8/icons8_save_16.png&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;scripttype&#34;</span><span class="p">:</span> <span class="s2">&#34;lua&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;script&#34;</span><span class="p">:</span> <span class="s2">&#34;ui:ShowMsg(tostring(ui:SaveDg2Cache()))&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="左侧边栏">左侧边栏
+</h3><p>通常我们需要快速的执行某个powershell或python脚本，可以将其添加到左侧边栏中，之后便可以直接点击该按钮以运行。</p>
+<p>🚩点击主界面【管理左侧边栏】按钮，若您是初次使用该功能，程序将会为您新建一条示例项目用于演示，您可在稍后修改该内容以自定义边栏；也可在语句列表的搜索栏中搜索<code>#LeftPanel#</code>并点击<code>打开</code>该项目然后点击工具条中的源代码按钮以修改内容。<br>
+让我们来看一段示例代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">[</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;comment&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="s2">&#34;disable&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;btn&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;存储文件到litedb&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;loaddata&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;icon&#34;</span><span class="p">:</span> <span class="s2">&#34;ms-appdata:///local/my_tmp_icons/48/DDORes_00076.ico&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;script&#34;</span><span class="p">:</span> <span class="s2">&#34;!StoreFileToLiteDb&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;comment&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="s2">&#34;enable&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;sep&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;loaddata&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;icon&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;script&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;comment&#34;</span><span class="p">:</span> <span class="s2">&#34;数据库管理工具&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="s2">&#34;enable&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;btn&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;数据库管理工具-AquaDataStudio&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;loaddata&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;icon&#34;</span><span class="p">:</span> <span class="s2">&#34;ms-appdata:///local/my_tmp_icons/datastudio.ico&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;script&#34;</span><span class="p">:</span> <span class="s2">&#34;Start-Process c:\\apps\\AquaDataStudio\\AquaDataStudio\\datastudio.bat -WorkingDirectory c:\\apps\\AquaDataStudio\\AquaDataStudio\\&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;comment&#34;</span><span class="p">:</span> <span class="s2">&#34;HeidiSQL&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="s2">&#34;enable&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;btn&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;打开HeidiSQL&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;loaddata&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;icon&#34;</span><span class="p">:</span> <span class="s2">&#34;ms-appdata:///local/my_tmp_icons/Assets/heidisql_logo.png&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;script&#34;</span><span class="p">:</span> <span class="s2">&#34;C:\\apps_unbak\\HeidiSQL_Portable\\heidisql.exe&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上面的代码将会在侧边栏中显示两个按钮和一个分隔空位(第一个按钮不会显示)。<br>
+<code>comment</code>:当鼠标悬浮在按钮上时的子提示信息<br>
+<code>status</code>:该按钮是否显示。可为enable和disable<br>
+<code>type</code>:sep为分隔符，btn为按钮<br>
+<code>name</code>:按钮名称<br>
+<code>loaddata</code>:false<br>
+<code>icon</code>:图标,建议使用32x32或48x48大小的图标<br>
+<code>script</code>:最重要的部分。对于简单的脚本语句，可直接在这里书写；对与复杂的脚本，可通过引用已保存的脚本语句（以感叹号!开头的项目）</p>
+<ul>
+<li>新增的功能<br>
+<code>scripttype</code>:脚本类型，可以为powershell和python，若不设置此值，将默认为powershell</li>
+</ul>
+<p>💚注意：请在修改完毕后点击应用左侧边栏下方的刷新按钮或重启App以生效。</p>
+<blockquote>
+<p>对于按钮图标路径，图片需放置在应用数据目录中，可点击左侧边栏中的第二个按钮（设置⚙️）查看或手动管理。</p>
+</blockquote>
+<p><img src="/mdimg/ps-gd-m.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/zh-cn/tags/sql/">SQL</a>
+        
+            <a href="/zh-cn/tags/powershell/">Powershell</a>
+        
+            <a href="/zh-cn/tags/python/">Python</a>
+        
+            <a href="/zh-cn/tags/scripts/">Scripts</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Owned by Fountain</span>
+    </section>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 May 24, 2024 00:00 UTC
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/sixteen-miles-out-ScvYtpYzgFI-unsplash.jpg" loading="lazy" data-key="" data-hash="/sixteen-miles-out-ScvYtpYzgFI-unsplash.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">隐私政策</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 Fountain
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
